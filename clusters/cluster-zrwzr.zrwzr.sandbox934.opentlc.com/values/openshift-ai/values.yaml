@@ -1,8 +1,10 @@
+# Phase 1: Install operator first (MaaS requires CRDs from operator)
+# After operator is ready, change modelsAsService to Managed
 dataScienceCluster:
   components:
     kserve:
       modelsAsService:
-        managementState: Managed
+        managementState: Removed
 
 gateways:
   maasDefaultGateway:
