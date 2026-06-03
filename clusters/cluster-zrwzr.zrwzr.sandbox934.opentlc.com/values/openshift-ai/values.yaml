@@ -1,0 +1,9 @@
+dataScienceCluster:
+  components:
+    kserve:
+      modelsAsService:
+        managementState: Managed
+
+gateways:
+  maasDefaultGateway:
+    useRoute: true

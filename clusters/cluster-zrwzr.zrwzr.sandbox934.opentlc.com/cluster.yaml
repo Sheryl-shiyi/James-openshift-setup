@@ -1,0 +1,7 @@
+global:
+  cluster:
+    name: cluster-zrwzr
+    baseDomain: zrwzr.sandbox934.opentlc.com
+cluster:
+  controlPlaneNodes: 3
+  workerNodes: 2
