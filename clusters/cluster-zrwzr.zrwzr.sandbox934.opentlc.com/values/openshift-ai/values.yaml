@@ -14,3 +14,13 @@ gateways:
     useRoute: true
     certificate:
       create: false
+
+dashboardConfig:
+  disableHardwareProfiles: false
+  disableModelCatalog: false
+  disableKueue: false
+  disableLMEval: false
+  disableFineTuning: false
+  disableModelMesh: true
+  disableTracking: true
+  enablement: true
