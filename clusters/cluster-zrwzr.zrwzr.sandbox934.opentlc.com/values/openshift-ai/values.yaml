@@ -6,18 +6,41 @@ dataScienceCluster:
 
 gateways:
   maasDefaultGateway:
-    useRoute: true
+    useRoute: false
     certificate:
-      create: false
+      create: true
+      clusterIssuer: letsencrypt
   openshiftAiInference:
     create: true
-    useRoute: true
+    useRoute: false
     certificate:
-      create: false
+      create: true
+      clusterIssuer: letsencrypt
 
 postgres-cluster:
   enabled: true
   namespace: redhat-ods-applications
+
+hardwareProfiles:
+  l40s:
+    node:
+      tolerations:
+        - key: nvidia.com/gpu
+          effect: NoSchedule
+          operator: Exists
+    displayName: NVIDIA L40S
+    cpu:
+      min: 2
+      max: 40
+      default: 2
+    memory:
+      min: 2Gi
+      max: 256Gi
+      default: 16Gi
+    gpu:
+      nvidia.com/gpu:
+        max: 4
+        displayName: NVIDIA L40S
 
 dashboardConfig:
   disableModelCatalog: false

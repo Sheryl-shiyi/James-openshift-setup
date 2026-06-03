@@ -5,3 +5,11 @@ global:
 cluster:
   controlPlaneNodes: 3
   workerNodes: 2
+  infraID: cluster-zrwzr-vgnsg
+aws:
+  region: us-east-2
+  azs:
+    - us-east-2a
+    - us-east-2b
+    - us-east-2c
+  ami: ami-021a620474c1cd2fe

@@ -1,0 +1,41 @@
+subscriptions:
+  premium:
+    displayName: Premium Access
+    models:
+      qwen3-8b:
+        namespace: models
+        tokenRateLimits:
+          - limit: 50000
+            window: 1m
+      gemma-4:
+        namespace: models
+        tokenRateLimits:
+          - limit: 50000
+            window: 1m
+    groups:
+      - name: rhods-admins
+    priority: 10
+
+  standard:
+    displayName: Standard Access
+    models:
+      qwen3-8b:
+        namespace: models
+        tokenRateLimits:
+          - limit: 10000
+            window: 1m
+    groups:
+      - name: rhods-users
+    priority: 5
+
+  free:
+    displayName: Free Tier
+    models:
+      qwen3-8b:
+        namespace: models
+        tokenRateLimits:
+          - limit: 1000
+            window: 1m
+    groups:
+      - name: system:authenticated:oauth
+    priority: 1

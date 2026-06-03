@@ -1,0 +1,5 @@
+instanceType: g6e.4xlarge
+autoscaling:
+  enabled: true
+  minReplicas: 0
+  maxReplicas: 4

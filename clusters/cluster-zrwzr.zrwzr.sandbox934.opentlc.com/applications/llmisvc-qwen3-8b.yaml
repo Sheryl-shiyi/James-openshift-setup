@@ -1,0 +1,39 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: '5'
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: llmisvc-qwen3-8b
+spec:
+  destination:
+    name: in-cluster
+    namespace: models
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - ../../clusters/cluster-zrwzr.zrwzr.sandbox934.opentlc.com/cluster.yaml
+      values: |
+        maas:
+          enabled: true
+    path: charts/llmisvc
+    repoURL: git@github.com:Sheryl-shiyi/James-openshift-setup.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    managedNamespaceMetadata:
+      labels:
+        argocd.argoproj.io/managed-by: openshift-gitops
+    retry:
+      backoff:
+        duration: 10s
+        factor: 3
+        maxDuration: 30m
+      limit: 10
+    syncOptions:
+    - CreateNamespace=true
