@@ -15,6 +15,10 @@ gateways:
     certificate:
       create: false
 
+postgres-cluster:
+  enabled: true
+  namespace: redhat-ods-applications
+
 dashboardConfig:
   disableModelCatalog: false
   disableKueue: false
