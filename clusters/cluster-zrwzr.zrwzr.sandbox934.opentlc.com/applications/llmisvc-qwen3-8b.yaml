@@ -17,6 +17,8 @@ spec:
       valueFiles:
       - ../../clusters/cluster-zrwzr.zrwzr.sandbox934.opentlc.com/cluster.yaml
       values: |
+        hardwareProfile:
+          name: l40s
         maas:
           enabled: true
     path: charts/llmisvc
