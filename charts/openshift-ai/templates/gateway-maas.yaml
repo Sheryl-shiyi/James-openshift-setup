@@ -27,7 +27,7 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: maas-default-gateway-openshift-default
+    name: maas-default-gateway-data-science-gateway-class
     weight: 100
   wildcardPolicy: None
 {{- else if .certificate.create }}
