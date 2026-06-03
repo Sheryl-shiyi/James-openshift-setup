@@ -7,3 +7,10 @@ dataScienceCluster:
 gateways:
   maasDefaultGateway:
     useRoute: true
+    certificate:
+      create: false
+  openshiftAiInference:
+    create: true
+    useRoute: true
+    certificate:
+      create: false
