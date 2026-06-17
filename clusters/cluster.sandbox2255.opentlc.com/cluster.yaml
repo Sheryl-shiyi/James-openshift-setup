@@ -1,0 +1,18 @@
+global:
+  cluster:
+    name: cluster
+    baseDomain: sandbox2255.opentlc.com
+desiredUpdate:
+  version: 
+cluster:
+  controlPlaneNodes: 3
+  workerNodes: 2
+  agePublicKey: age1eexe9s9ypk803klvce8qfv4yzhgnps6eum4ljwn0km9e0efgxfhqs9w69g
+  infraID: cluster-t4bsv
+aws:
+  region: us-east-2
+  azs: ["us-east-2b","us-east-2c","us-east-2a"]
+  ami: ami-0b264801b0e00009c
+  subnets: ["subnet-034869c1af40a20be","subnet-08a6d15c2e06a75a9","subnet-04db7fdeb8e40828d"]
+  nodeSg: sg-03657ffa233f6563a
+  vpcId: vpc-01d8b9c7f6f2ac83a
